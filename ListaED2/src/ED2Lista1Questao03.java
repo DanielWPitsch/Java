@@ -7,6 +7,7 @@
 */
 
 public class ED2Lista1Questao03 {
+	
 	public static void main (String args[]) {
 		int[] array = {12, 33, 232, 41, 55};
 		
