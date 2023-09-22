@@ -1,5 +1,8 @@
 package Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class ArvoreBinaria {
 	//Arvore binaria usando a classe Node como base
 	
@@ -78,5 +81,24 @@ public class ArvoreBinaria {
 		}
 		System.out.println(raiz.data);
 		imprimeArvore(raiz.esquerda, level + 1);
+	}
+	
+	public void exibirNivel() {
+		Node tree = raiz;
+		if(tree == null) {
+			return;
+		}
+		Queue<Node> fila = new LinkedList<>();
+		fila.add(tree);
+		while(!fila.isEmpty()) {
+			Node no= fila.poll();
+			System.out.println(no.data + "  ");
+			if(no.esquerda !=null) {
+				fila.add(no.esquerda);
+			}
+			if(no.direita != null) {
+				fila.add(no.direita);
+			}
+		}
 	}
 }
