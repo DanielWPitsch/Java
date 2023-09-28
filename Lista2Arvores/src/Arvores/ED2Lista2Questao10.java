@@ -28,6 +28,7 @@ public class ED2Lista2Questao10 {
 
         double resultado = operacao.evaluate();
         System.out.println("Resultado da expressão: " + resultado);
+        System.out.println("-Fim-");
     }
 
 }
