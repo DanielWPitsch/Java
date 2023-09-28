@@ -1,8 +1,8 @@
 package Arvores;
 
 /**
-** Função :
-** Autor :
+** Função : Sistema de alunos com árvore BINÁRIA DE PESQUISA
+** Autor : Daniel Warella Pitsch
 ** Data :
 ** Observações:
 */

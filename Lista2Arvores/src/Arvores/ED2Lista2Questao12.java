@@ -1,9 +1,9 @@
 package Arvores;
 
 /**
-** Função :
-** Autor :
-** Data :
+** Função : Processos de um sistema operacional apresentados com arvore
+** Autor : Daniel Warella Pitsch
+** Data : 
 ** Observações:
 */
 
