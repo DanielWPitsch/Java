@@ -20,7 +20,7 @@ public class ArvoreBinaria {
 		return t ==null;
 	}
 
-	private <T extends Comparable<T> > Node inserir(Node raiz, Object data) {
+	<T extends Comparable<T> > Node inserir(Node raiz, Object data) {
 		if(arvoreVazia(raiz)) {
 			raiz = new Node(data);
 		}else if(raiz.data.toString().compareTo(data.toString()) > 0){

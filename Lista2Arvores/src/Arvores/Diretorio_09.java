@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Diretorio_09 {
-	private String nome;
-    private List<Arquivo_09> arquivos;
-    private List<Diretorio_09> subdiretorios;
+	String nome;
+	Diretorio_09 pai;
+    List<Arquivo_09> arquivos;
+    List<Diretorio_09> subdiretorios;
 
     //recebe o nome e seta arraylist vazio para arquivos e subdiretorios
     public Diretorio_09(String nome) {

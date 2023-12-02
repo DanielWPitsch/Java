@@ -1,23 +1,23 @@
 package Arvores;
 
 class Processo_12 {
-	private int id;
+	int id;
     private String nome;
-    private int prioridade;
-    private int tempoDeExecucao;
-    Processo_12 left;
-    Processo_12 right;
+    int prioridade;
+    int tempoDeExecucao;
 
     public Processo_12(int id, String nome, int prioridade, int tempoDeExecucao) {
         this.id = id;
         this.nome = nome;
         this.prioridade = prioridade;
         this.tempoDeExecucao = tempoDeExecucao;
-        this.left = null;
-        this.right = null;
     }
 
-    public int getId() {
+    public Processo_12(Processo_12 processo) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getId() {
         return id;
     }
 

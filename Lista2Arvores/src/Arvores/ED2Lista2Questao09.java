@@ -13,6 +13,7 @@ public class ED2Lista2Questao09 {
 	public static void main(String args[]) {
 		
 		int opc=1;
+		ArvoreDiretorios_09 arv = new ArvoreDiretorios_09();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-Sistema de Diretorios e Arquivos-");
         System.out.println("Informe o nome do diretorio raiz: ");
@@ -35,30 +36,24 @@ public class ED2Lista2Questao09 {
         			System.out.println("Inofrme o nome do arquivo que deseja criar: ");
         			String nomeArquivo = sc.next();
         			Arquivo_09 arquivo = new Arquivo_09(nomeArquivo);
-        			// diretorio da vez adiciona arquivo
+        			arv.addArquivo(arquivo);
         			break;
         		case 2:
         			System.out.println("Inofrme o nome do diretorio que deseja criar: ");
         			String nomeDiretorio = sc.next();
         			Diretorio_09 diretorio = new Diretorio_09(nomeDiretorio);
-        			// diretorio da vez adiciona subdiretorio
+        			arv.addDirectorio(diretorio);
         			break;
         		case 3:
-        			/*System.out.println("Conteúdo da Raiz:");
-        	        List<Diretorio> subdiretoriosRaiz = raiz.getSubdiretorios();
-        	        List<Arquivo> arquivosRaiz = raiz.getArquivos();
-        	        for (Diretorio subdiretorio : subdiretoriosRaiz) {
-        	            System.out.println("Diretório: " + subdiretorio.getNome());
-        	        }
-        	        for (Arquivo arquivo : arquivosRaiz) {
-        	            System.out.println("Arquivo: " + arquivo.getNome());
-        	        }*/
+        			arv.listar();
         			break;
         		case 4:
-        			//receber a chave do diretorio e coloca-lo como o da vez
+        			System.out.println("informe o nome do diretorio que deseja acessar: ");
+        			String diretorio1 = sc.next();
+        			arv.abrirDiretorio(diretorio1);
         			break;
         		case 5:
-        			//voltar 1 diretorio
+        			arv.navegar();
         			break;
         		default:
         			System.out.println("Opcção inválida!");
