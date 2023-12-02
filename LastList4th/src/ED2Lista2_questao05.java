@@ -1,6 +1,6 @@
 /**
 ** Função :
-** Autor :
+** Autor : 
 ** Data :
 ** Observações:
 */
