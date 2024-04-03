@@ -1,8 +1,8 @@
 /**
-** Função :
-** Autor :
-** Data :
-** Observações:
+** Função : Mede tempo do bublesort com alguns casos de 10 a 1.000.000
+** Autor : Daniel Warella Pitsch
+** Data : 02/12/2023
+** Observações: 
 */
 
 import java.util.Random;

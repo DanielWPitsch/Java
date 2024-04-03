@@ -1,72 +1,40 @@
 /**
-** Função :
-** Autor :
-** Data :
-** Observações:
+** Função : Mede tempo do Arrays.sort com alguns casos de 10.000 a 500.000.000
+** Autor : Daniel Warella Pitsch
+** Data : 02/12/2023
+** Observações: 
 */
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ED2Lista2_questao03 {
-
     public static void main(String[] args) {
-        // Defina os tamanhos dos vetores para os experimentos
-        int[] tamanhos = {100000, 1000000, 10000000, 100000000, 500000000};
+        int[] sizes = {10000, 100000, 1000000, 10000000, 100000000, 500000000};
+        int i=0;
 
-        // Execute os experimentos para cada tamanho do vetor
-        for (int tamanho : tamanhos) {
-            int[] vetor = geraVetorAleatorio(tamanho);
+        for (int size : sizes) {
+            int[] array = gerarVetorAleatorio(size);
 
-            // Registre o tempo de início
-            long startTime = System.nanoTime();
+            long startTime = System.currentTimeMillis();
+            Arrays.sort(array);
+            long endTime = System.currentTimeMillis();
+            long elapsedTime = endTime - startTime;
 
-            // Execute o algoritmo de ordenação (por exemplo, Quicksort)
-            quicksort(vetor, 0, vetor.length - 1);
-
-            // Registre o tempo de término
-            long endTime = System.nanoTime();
-
-            // Calcule a duração em milissegundos
-            long durationInMillis = (endTime - startTime) / 1000000;
-
-            // Exiba os resultados
-            System.out.println("Tamanho do vetor: " + tamanho + " - Tempo de execução: " + durationInMillis + " ms");
+            System.out.println(sizes[i]+"= "+elapsedTime+" milissegundos");
+            i++;
         }
     }
-
-    static int[] geraVetorAleatorio(int tamanho) {
+    public static int[] gerarVetorAleatorio(int tamanho) {
+        Random random = new Random();
         int[] vetor = new int[tamanho];
+
         for (int i = 0; i < tamanho; i++) {
-            vetor[i] = (int) (Math.random() * tamanho);
+            vetor[i] = random.nextInt(1000); 
         }
+
         return vetor;
     }
-
-    static void quicksort(int[] arr, int low, int high) {
-        if (low < high) {
-            int pivotIndex = partition(arr, low, high);
-            quicksort(arr, low, pivotIndex - 1);
-            quicksort(arr, pivotIndex + 1, high);
-        }
-    }
-
-    static int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = low - 1;
-
-        for (int j = low; j < high; j++) {
-            if (arr[j] <= pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-
-        return i + 1;
-    }
 }
+
+    

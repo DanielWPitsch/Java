@@ -2,10 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
-** Função :
-** Autor :
-** Data :
-** Observações:
+** Função : Mede tempo do quicksort com alguns casos de 10 a 1.000.000
+** Autor : Daniel Warella Pitsch
+** Data : 02/12/2023
+** Observações: 
 */
 
 import java.util.Scanner;
