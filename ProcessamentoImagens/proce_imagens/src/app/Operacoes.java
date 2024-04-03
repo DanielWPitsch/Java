@@ -334,12 +334,12 @@ public class Operacoes {
                 int green = cor.getGreen();
                 int blue = cor.getBlue();
 
-                if(alteracao*red > 255){
-                    red =255;
-                }else if(alteracao*red < 0){
-                    red =0;
+                if(alteracao * red > 255){
+                    red = 255;
+                }else if(alteracao * red < 0){
+                    red = 0;
                 }else{
-                    red = (int) alteracao*red;
+                    red = (int) alteracao * red;
                 }
 
                 if(alteracao*blue > 255){
@@ -347,7 +347,7 @@ public class Operacoes {
                 }else if(alteracao*blue < 0){
                     blue =0;
                 }else{
-                    blue = (int) alteracao * green;
+                    blue = (int) alteracao * blue;
                 }
 
                 if(alteracao*green > 255){
@@ -422,33 +422,42 @@ public class Operacoes {
             for(int w=0; w<largura; w++){
                 int rgb = imgEntrada.getRGB(w, h); // 1byte, 1byte, 1byte
                 Color cor = new Color(rgb);
+
                 int red = cor.getRed();
                 int green = cor.getGreen();
                 int blue = cor.getBlue();
 
-                if(alteracao*red > 255){
-                    red =255;
-                }else if(alteracao*red < 0){
-                    red =0;
+                double Y = (0.299 * red) + (0.587 * green) + (0.114 * blue);
+                double I = (0.596 * red) - (0.274 * green) - (0.322 * blue);
+                double Q = (0.211 * red) - (0.523 * green) + (0.312 * blue);
+
+                if(alteracao + Y > 255){
+                    Y =255;
+                }else if(alteracao + Y < 0){
+                    Y =0;
                 }else{
-                    red = (int) alteracao*red;
+                    Y = alteracao + Y;
                 }
 
-                if(alteracao*blue > 255){
-                    blue =255;
-                }else if(alteracao*blue < 0){
-                    blue =0;
+                if(alteracao + I > 255){
+                    I = 255;
+                }else if(alteracao + I < 0){
+                    I = 0;
                 }else{
-                    blue = (int) alteracao * green;
+                    I = alteracao + I;
                 }
 
-                if(alteracao*green > 255){
-                    green =255;
-                }else if(alteracao*green < 0){
-                    green =0;
+                if(alteracao + Q > 255){
+                    Q = 255;
+                }else if(alteracao + Q < 0){
+                    Q = 0;
                 }else{
-                    green = (int) alteracao * green;
+                    Q = alteracao + Q;
                 }
+
+                red = (int) Y;
+                green = (int) I;
+                blue = (int) Q;
 
                 Color novaCor = new Color(red, green, blue);
                 imgSaida.setRGB(w, h, novaCor.getRGB());
@@ -468,33 +477,62 @@ public class Operacoes {
             for(int w=0; w<largura; w++){
                 int rgb = imgEntrada.getRGB(w, h); // 1byte, 1byte, 1byte
                 Color cor = new Color(rgb);
+
                 int red = cor.getRed();
                 int green = cor.getGreen();
                 int blue = cor.getBlue();
 
-                if(alteracao*red > 255){
-                    red =255;
-                }else if(alteracao*red < 0){
-                    red =0;
+                double Y = (0.299 * red) + (0.587 * green) + (0.114 * blue);
+                double I = (0.596 * red) - (0.274 * green) - (0.322 * blue);
+                double Q = (0.211 * red) - (0.523 * green) + (0.312 * blue);
+
+                if(alteracao * Y > 255){
+                    Y =255;
+                }else if(alteracao * Y < 0){
+                    Y =0;
                 }else{
-                    red = (int) alteracao*red;
+                    Y = alteracao * Y;
                 }
 
-                if(alteracao*blue > 255){
-                    blue =255;
-                }else if(alteracao*blue < 0){
-                    blue =0;
+                if(alteracao * I > 255){
+                    I = 255;
+                }else if(alteracao * I < 0){
+                    I = 0;
                 }else{
-                    blue = (int) alteracao * green;
+                    I = alteracao * I;
                 }
 
-                if(alteracao*green > 255){
-                    green =255;
-                }else if(alteracao*green < 0){
-                    green =0;
+                if(alteracao * Q > 255){
+                    Q = 255;
+                }else if(alteracao * Q < 0){
+                    Q = 0;
                 }else{
-                    green = (int) alteracao * green;
+                    Q = alteracao * Q;
                 }
+
+                red = (int) ((1.000 * Y) + (0.956 * I) + (0.621 * Q));
+                green = (int) ((1.000 * Y) - (0.272 * I) - (0.647 * Q));
+                blue = (int) ((1.000 * Y) - (1.106 * I) + (1.703 * Q));
+
+                if(red > 255){
+                    red = 255;
+                }else if(red < 0){
+                    red = 0;
+                }
+
+                if(green > 255){
+                    green = 255;
+                }else if(green < 0){
+                    green = 0;
+                }
+
+                if(blue > 255){
+                    blue = 255;
+                }else if(blue < 0){
+                    blue = 0;
+                }
+
+                //System.out.println(red);
 
                 Color novaCor = new Color(red, green, blue);
                 imgSaida.setRGB(w, h, novaCor.getRGB());
