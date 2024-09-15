@@ -1,0 +1,19 @@
+
+]
+java:S1220""Move this file to a named package.8®×¾ıœ2J$96b0c358-5924-4e7d-87a9-6ca59902401f
+m	java:S106$"+Replace this use of System.out by a logger.(şÍÛÁ8¶×¾ıœ2J$328ea2b6-890f-4c99-9765-1e6b5e1206b6
+m	java:S106&"+Replace this use of System.out by a logger.(¤êŸò8¶×¾ıœ2J$f2d18fbd-fc81-490a-b0d6-edd14fa483d8
+”
+java:S3457+"Q%n should be used in place of \n to produce the platform-specific line separator.(ìöÛ‡8·×¾ıœ2J$55179e24-33ba-48af-bdbb-ef21e47b435e
+h
+java:S3457+"%String contains no format specifiers.(ìöÛ‡8·×¾ıœ2J$6d8b9106-6505-4114-91ef-51b72f85df42
+m	java:S106+"+Replace this use of System.out by a logger.(ìöÛ‡8·×¾ıœ2J$a1890503-0ce2-4fb5-81a5-c8f3a20ee272
+l	java:S106-"+Replace this use of System.out by a logger.(ı—†8¸×¾ıœ2J$272d69fe-054c-4873-b1d4-55485810c4ec
+x
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8‹ùäıœ2J$c098962d-9d0c-49b7-bd10-85847f336f0a
+x
+java:S1128"0Remove this unused import 'java.time.LocalTime'.(à®øÃùÿÿÿÿ8‹ùäıœ2J$3a3a978f-ecb5-4d09-ba60-f9a4b404048f
+‚
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8‹ùäıœ2J$96e98e59-9224-467e-adb5-45e63230dc7f
+r
+java:S1128"/Remove this unused import 'java.util.Calendar'.(ÿÛö´8‹ùäıœ2J$21da6832-caec-497e-83a3-8fb1425bfcd3
