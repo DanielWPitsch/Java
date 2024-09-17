@@ -1,0 +1,11 @@
+
+7
+java:S1220""Move this file to a named package.8Ş·óŸ2
+n
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(‰ÈÍ¾8ñ·óŸ2
+B
+java:S3457"%String contains no format specifiers.(‰ÈÍ¾8ñ·óŸ2
+G	java:S106"+Replace this use of System.out by a logger.(‰ÈÍ¾8ñ·óŸ2
+L	java:S106"+Replace this use of System.out by a logger.(ßœ¾ãûÿÿÿÿ8ò·óŸ2
+L	java:S106"+Replace this use of System.out by a logger.(åä˜øÿÿÿÿ8ô·óŸ2
+G	java:S106"+Replace this use of System.out by a logger.(·ÊóÑ8ô·óŸ2
